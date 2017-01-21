@@ -9,11 +9,13 @@
 User.destroy_all
 
 cc_user = User.create({
+  user_name: "Administrator"
   email: "a@c.com",
   password: "adminpass",
   password_confirmation: "adminpass"
   })
 student_user = User.create({
+  user_name: "Student"
   email: "s@gmail.com",
   password: "studentpass",
   password_confirmation: "studentpass"
