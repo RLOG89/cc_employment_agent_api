@@ -106,7 +106,7 @@ gecko_labs = Employer.create({
   company_name: "Gecko Labs",
   company_website: "http://www.geckolabs.co.uk/",
   contact_details: "Mr Ima Gecko, 07776612890",
-  company_logo_url: "http://logonoid.com/images/tesco-bank-logo.png",
+  company_logo_url: "http://www.geckolabs.co.uk/wp-content/uploads/2015/10/Gecko_Labs_logo.png",
   business_type: "data analysis",
   address: "IBupa House, 116 Dundas Street, Edinburgh EH3 5DQ",
   no_previous_students_hired: 1,
