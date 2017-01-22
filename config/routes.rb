@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {sessions: 'sessions'}
 
   scope path: 'api' do
-    resources :employers, :jobs
+    resources :employers
+    resources :jobs
   end
 
   resources :users, only: [:index]
