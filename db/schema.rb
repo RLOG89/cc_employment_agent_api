@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121170428) do
+ActiveRecord::Schema.define(version: 20170122150854) do
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "title"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "employers", force: :cascade do |t|
     t.string   "company_name"
