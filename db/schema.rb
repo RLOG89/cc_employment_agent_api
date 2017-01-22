@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121170428) do
+ActiveRecord::Schema.define(version: 20170122182455) do
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "title"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "employers", force: :cascade do |t|
     t.string   "company_name"
@@ -25,6 +35,20 @@ ActiveRecord::Schema.define(version: 20170121170428) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "company_name"
+    t.string   "job_title"
+    t.integer  "salary_range_min"
+    t.integer  "salary_range_max"
+    t.datetime "application_closing_date"
+    t.string   "application_process"
+    t.integer  "employer_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

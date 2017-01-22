@@ -8,6 +8,7 @@
 
 User.destroy_all
 Employer.destroy_all
+Job.destroy_all
 
 cc_user = User.create({
   user_name: "Administrator",
@@ -112,3 +113,12 @@ gecko_labs = Employer.create({
   no_previous_students_hired: 1,
   notes: "Always on the lookout for talent"
   })
+
+job_bemo = Job.create({
+  company_name: "Bemo",
+  job_title: "Junior Developer (Front End)",
+  salary_range_min: "20000",
+  salary_range_max: "25000",
+  application_closing_date: "2017-01-13",
+  application_process: "CV and cover letters to Leigh-ann by by Friday 13th"
+})
