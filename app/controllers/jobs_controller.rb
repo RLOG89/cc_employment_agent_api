@@ -7,12 +7,17 @@ class JobsController < ApplicationController
   end
 
   def create 
-    job = Job.create( job_params )
+    job = Job.create(job_params)
     render json: job, status: :created
   end
 
   def show
     job = Job.find(params[:id])
+    render json: job
+  end
+
+  def update
+    job = Job.update(params[:id], job_params)
     render json: job
   end
 
