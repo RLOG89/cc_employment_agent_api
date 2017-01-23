@@ -5,6 +5,6 @@ class Employer < ActiveRecord::Base
         hash_secret: "longSecretString"
       }
     )
-  validates_attachment :logo, presence: true
+  # validates_attachment :logo, presence: true
   do_not_validate_attachment_file_type :logo
 end
