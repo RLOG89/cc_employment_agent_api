@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170122215414) do
+=======
+ActiveRecord::Schema.define(version: 20170122190815) do
+>>>>>>> develop
 
   create_table "employers", force: :cascade do |t|
     t.string   "company_name"
@@ -28,6 +32,22 @@ ActiveRecord::Schema.define(version: 20170122215414) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
   end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "company_name"
+    t.string   "job_title"
+    t.integer  "salary_range_min"
+    t.integer  "salary_range_max"
+    t.datetime "application_closing_date"
+    t.string   "application_process"
+    t.integer  "employer_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "job_spec"
+    t.string   "job_spec_filename"
+  end
+
+  add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

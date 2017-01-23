@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   scope path: 'api' do
     resources :employers
+    resources :jobs
   end
 
   resources :users, only: [:index]
