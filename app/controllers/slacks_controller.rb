@@ -18,7 +18,7 @@ class SlacksController < ApplicationController
     # )
     RestClient::Request.execute(method: :post,
                                url: url,
-                               payload: '{"param_1": "1"}',
+                               payload: slack_params.to_json,
                                headers: {"Content-Type" => "application/json"}
                               )
     render json: "testing testing"
