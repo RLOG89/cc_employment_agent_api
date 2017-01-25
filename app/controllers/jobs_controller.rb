@@ -6,7 +6,7 @@ class JobsController < ApplicationController
     render json: Job.all
   end
 
-  def create 
+  def create
     job = Job.create(job_params)
     render json: job, status: :created
   end
