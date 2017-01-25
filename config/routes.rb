@@ -4,11 +4,8 @@ Rails.application.routes.draw do
   scope path: 'api' do
     resources :employers
     resources :jobs
-<<<<<<< Updated upstream
     resources :students
-=======
     resources :slacks
->>>>>>> Stashed changes
   end
 
   resources :users, only: [:index]
