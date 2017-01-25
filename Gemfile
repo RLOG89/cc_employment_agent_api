@@ -18,6 +18,7 @@ gem 'cancancan'
 
   gem 'pg' 
   gem 'rails_12factor' 
+  gem 'rest-client', '~> 2.0'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
