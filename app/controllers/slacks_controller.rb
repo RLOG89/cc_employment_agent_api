@@ -9,9 +9,14 @@ class SlacksController < ApplicationController
 
   def create
     url = 'https://abot-slack-bot.ngrok.io/jobs'
-    RestClient.post url, slack_params.to_json, {content_type: :json}
+    # RestClient.post url, slack_params.to_json, {content_type: :json}
+    RestClient::Request.execute(
+      method: :post,
+      url: url,
+      content_type: :json,
+      payload: { test: "this is a test" }.to_json
+    )
     render json: "testing testing"
-
   end
 
   private
