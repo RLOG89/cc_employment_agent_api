@@ -15,7 +15,11 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'responders'
 gem 'devise'
 gem 'cancancan'
-gem 'pg'
+
+group :production do
+  gem 'pg' 
+  gem 'rails_12factor', '0.0.2' 
+end
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
