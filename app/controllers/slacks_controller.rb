@@ -7,4 +7,16 @@ class SlacksController < ApplicationController
     render json: "this worked!"
   end
 
+  def create
+    var url = 'https://abot-slack-bot.ngrok.io/jobs'
+    RestClient.post url, slack_params
+    render json: "testing testing"
+
+  end
+
+  private
+  def slack_params
+    params.require(:slack).permit(:data)
+  end
+
 end
