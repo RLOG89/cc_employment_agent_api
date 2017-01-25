@@ -114,11 +114,36 @@ gecko_labs = Employer.create({
   notes: "Always on the lookout for talent"
   })
 
-job_bemo = Job.create({
+job_bemo_front_end = Job.create({
   company_name: "Bemo",
   job_title: "Junior Developer (Front End)",
-  salary_range_min: "20000",
-  salary_range_max: "25000",
+  salary_range_min: 20000,
+  salary_range_max: 25000,
   application_closing_date: "2017-01-13",
   application_process: "CV and cover letters to Leigh-ann by by Friday 13th"
+})
+
+job_bemo_back_end = Job.create({
+  company_name: "Bemo",
+  job_title: "Junior Developer (Mobile)",
+  salary_range_min: 20000,
+  salary_range_max: 25000,
+  application_closing_date: "2017-01-13",
+  application_process: "CV and cover letters to Leigh-ann by Friday 13th"
+})
+job_fanduel_junior = Job.create({
+  company_name: "FanDuel",
+  job_title: "Junior Developer",
+  salary_range_min: 22000,
+  salary_range_max: 22000,
+  application_closing_date: "2017-02-10",
+  application_process: "Apply direct via their website"
+})
+job_RBS_BA = Job.create({
+  company_name: "RBS",
+  job_title: "Business Analyst",
+  salary_range_min: 30000,
+  salary_range_max: 40000,
+  application_closing_date: "2017-01-21",
+  application_process: "CV and cover letters to Leigh-ann by Friday 13th"
 })
