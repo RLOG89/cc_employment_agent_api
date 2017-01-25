@@ -9,7 +9,7 @@ class SlacksController < ApplicationController
       slack_params.to_json,
       {content_type: :json, accept: :json}
     )
-    render json: response
+    render json: response, status: :created
 
   end
 
