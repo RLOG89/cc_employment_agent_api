@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122190815) do
+ActiveRecord::Schema.define(version: 20170123134909) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "employers", force: :cascade do |t|
     t.string   "company_name"
@@ -40,7 +43,18 @@ ActiveRecord::Schema.define(version: 20170122190815) do
     t.string   "job_spec_filename"
   end
 
-  add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id"
+  add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
+
+  create_table "students", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "profile"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "students", ["user_id"], name: "index_students_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -58,7 +72,9 @@ ActiveRecord::Schema.define(version: 20170122190815) do
     t.string   "user_name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "jobs", "employers"
+  add_foreign_key "students", "users"
 end
