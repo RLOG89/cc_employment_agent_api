@@ -2,21 +2,20 @@ require 'rest_client'
 
 class SlacksController < ApplicationController
 
-  def index
-    RestClient.post 'https://abot-slack-bot.ngrok.io/jobs', "Hello Alex"
-    render json: "this worked!"
-  end
-
   def create
-    var url = 'https://abot-slack-bot.ngrok.io/jobs'
-    RestClient.post url, slack_params
-    render json: "testing testing"
+    puts "sending:" + slack_params.to_json
+    response = RestClient.post(
+      'https://abot-slack-bot.ngrok.io/jobs',
+      slack_params.to_json,
+      {content_type: :json, accept: :json}
+    )
+    render json: response
 
   end
 
   private
   def slack_params
-    params.require(:slack).permit(:data)
+    params.require('slack')
   end
 
 end
