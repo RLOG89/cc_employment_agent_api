@@ -147,3 +147,39 @@ job_RBS_BA = Job.create({
   application_closing_date: "2017-01-21",
   application_process: "CV and cover letters to Leigh-ann by Friday 13th"
 })
+
+slack_names = {
+  'Adrian Tuckwell'=> 'adriantuckwell',
+  'Alex Bazlinton'=> 'alex',
+  'Tom Benham'=> 'benji2634',
+  'Bertie Croll'=> 'bertiecroll',
+  'Bobby Ross'=> 'brossco85',
+  'Carlos Pereira'=> 'carlinhop',
+  'Cyrus Balsara'=> 'cbalsara',
+  'Cookie L'=> 'clacson',
+  'Claudia Menting'=> 'claudia',
+  'Craig Morton'=> 'craigmorton',
+  'David O’Leary'=> 'davidoleary',
+  'Diana Man'=> 'diana',
+  'Euan Ramsay'=> 'euanramsay',
+  'Jo Elder'=> 'jo_elder',
+  'Kate Manson'=> 'katem',
+  'Keith Douglas'=> 'keithdouglas',
+  'Kyle Grenell'=> 'kylegrenell',
+  'Matthew Jeorrett'=> 'mjeorrett',
+  'Max Veasey'=> 'mv87',
+  'Paul Milne'=> 'paulmilne',
+  'Pavlos MacDonald'=> 'pavlos',
+  'Ross Loggie'=> 'rossloggie',
+  'Sian RD'=> 'sianrd',
+  'Thomas Crines'=> 'thomascrines' }
+
+slack_names.each do |name, slack_name| 
+  User.create({
+    user_name: slack_name,
+    email: slack_name + '@codeclanmail.com',
+    password: 'password',
+    password_confirmation: 'password',
+    slack_name: slack_name
+    })
+end
