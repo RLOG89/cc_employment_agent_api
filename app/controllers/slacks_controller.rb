@@ -12,7 +12,6 @@ class SlacksController < ApplicationController
       )
       render json: response, status: :created
     end
-  end
 
   def create
     puts "sending:" + slack_params.to_json
