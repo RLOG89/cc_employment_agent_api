@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125172351) do
+ActiveRecord::Schema.define(version: 20170126084830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170125172351) do
     t.datetime "updated_at",               null: false
     t.text     "job_spec"
     t.string   "job_spec_filename"
+    t.text     "slack_data"
   end
 
   add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
